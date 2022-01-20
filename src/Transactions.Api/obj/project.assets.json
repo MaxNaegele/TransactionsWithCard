@@ -1958,11 +1958,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxna\\Documents\\Projetos\\Challenges\\Transactions.Api\\Transactions.Api.csproj",
+      "projectUniqueName": "C:\\Users\\maxna\\Documents\\Projetos\\Challenges\\TransactionsWithCard\\src\\Transactions.Api\\Transactions.Api.csproj",
       "projectName": "Transactions.Api",
-      "projectPath": "C:\\Users\\maxna\\Documents\\Projetos\\Challenges\\Transactions.Api\\Transactions.Api.csproj",
+      "projectPath": "C:\\Users\\maxna\\Documents\\Projetos\\Challenges\\TransactionsWithCard\\src\\Transactions.Api\\Transactions.Api.csproj",
       "packagesPath": "C:\\Users\\maxna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxna\\Documents\\Projetos\\Challenges\\Transactions.Api\\obj\\",
+      "outputPath": "C:\\Users\\maxna\\Documents\\Projetos\\Challenges\\TransactionsWithCard\\src\\Transactions.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maxna\\AppData\\Roaming\\NuGet\\NuGet.Config"
