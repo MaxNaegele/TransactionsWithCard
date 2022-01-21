@@ -13,16 +13,16 @@ public class CreateCardTransactionModel
     [Required(ErrorMessage = "NumberParcel is required")]
     public int NumberParcel { get; set; }
 
-    public CardTransaction MapTo()
-    {
-        return new CardTransaction()
+        public CardTransaction MapTo()
         {
-            Nsu = this.Nsu,
-            TransactionDate = DateTime.Now,
-            CardNumber = this.CardNumber,
-            GrossTransactionValue = this.GrossTransactionValue,
-            NumberParcel = NumberParcel
-        };
-    }
+            return new CardTransaction()
+            {
+                Nsu = this.Nsu,
+                TransactionDate = DateTime.Now,
+                CardNumber = this.CardNumber,
+                GrossTransactionValue = this.GrossTransactionValue,
+                NumberParcel = NumberParcel
+            };
+        }
 
 }

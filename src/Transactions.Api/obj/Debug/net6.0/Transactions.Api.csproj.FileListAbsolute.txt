@@ -116,3 +116,8 @@ C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactio
 C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactions.Api\obj\Debug\net6.0\ref\Transactions.Api.dll
 C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactions.Api\obj\Debug\net6.0\Transactions.Api.pdb
 C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactions.Api\obj\Debug\net6.0\Transactions.Api.genruntimeconfig.cache
+C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactions.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactions.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactions.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactions.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\maxna\Documents\Projetos\Challenges\TransactionsWithCard\src\Transactions.Api\obj\Debug\net6.0\Transactions.Api.MvcApplicationPartsAssemblyInfo.cs

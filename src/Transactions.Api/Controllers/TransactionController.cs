@@ -5,7 +5,6 @@ using Transactions.Api.Models.Services.Interfaces;
 [Route("api/v1/transaction")]
 public sealed class TransactionController : Controller
 {
-
     private readonly AppDbContext _context;
 
     private ICardTransactionService _cardtransactionservice;
@@ -19,6 +18,11 @@ public sealed class TransactionController : Controller
     public async Task<IActionResult> PayWithCard([FromBody] CreateCardTransactionModel model)
     {
         var entity = model.MapTo();
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState.Values.Select(x => x.Errors));
+        }
+        
         if (await _cardtransactionservice.CreatePayWithCard(entity))
             return NoContent();
 
@@ -28,7 +32,7 @@ public sealed class TransactionController : Controller
 
     [HttpGet, Route("transaction-list/{nsu:int}")]
     public async Task<IActionResult> TransactionList([FromRoute] int nsu)
-    {    
+    {
         return Ok(await _cardtransactionservice.ListTransaction(nsu));
     }
 }

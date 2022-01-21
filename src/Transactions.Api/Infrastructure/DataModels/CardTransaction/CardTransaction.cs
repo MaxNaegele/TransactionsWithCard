@@ -14,4 +14,5 @@ public sealed class CardTransaction
     public int NumberParcel { get; set; }
     public string LastFourDigitsCard { get; set; }
     public ICollection<Parcel> Parcels { get; set; }
+    public ICollection<Anticipation> Anticipations { get; set; }
 }

@@ -6,9 +6,20 @@ namespace Transactions.Api.Models.Services
     public class CardTransactionService : ICardTransactionService
     {
         private readonly AppDbContext _context;
-        public CardTransactionService(AppDbContext context)
+        private IParcelService _parcelService;
+        public CardTransactionService(AppDbContext context, IParcelService parcelService)
         {
             _context = context;
+            _parcelService = parcelService;
+        }
+
+        public async Task<bool> ConfirmAnticipationTransaction(int id)
+        {
+            var transaction = await _context.CardTransactions.WhereId(id).SingleAsync();
+            transaction.Anticipad = true;
+            _context.CardTransactions.Update(transaction);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
         public async Task<bool> CreatePayWithCard(CardTransaction entity)
@@ -22,24 +33,11 @@ namespace Transactions.Api.Models.Services
             {
                 entity.ApprovalDate = DateTime.Now;
                 entity.AcquirerConfirmation = AcquirerConfirmation.Approved;
-
-                var parcels = new List<Parcel>();
-                for (var i = 0; i < entity.NumberParcel; i++)
-                {
-                    int numberParcel = (i + 1);
-                    parcels.Add(new Parcel()
-                    {
-                        GrossValue = entity.GrossTransactionValue / entity.NumberParcel,
-                        LiquidValue = entity.LiquidTransactionValue / entity.NumberParcel,
-                        NumberParcel = numberParcel,
-                        ExpectedReceiptDate = entity.TransactionDate.AddDays(numberParcel * 30)
-                    });
-                }
-                entity.Parcels = parcels;
+                entity.Parcels = _parcelService.GenerateParcels(entity);
             }
 
             _context.CardTransactions.Add(entity);
-             _context.SaveChanges();
+            _context.SaveChanges();
 
             return true;
         }
